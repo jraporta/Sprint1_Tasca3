@@ -24,6 +24,7 @@ public class Entrada {
 				entrada.nextLine();
 			}
 		}while(!success);
+		entrada.nextLine();
 		return miByte;
 	}
 
@@ -40,6 +41,7 @@ public class Entrada {
 				entrada.nextLine();
 			}
 		}while(!success);
+		entrada.nextLine();
 		return miInt;
 	}
 
@@ -56,6 +58,7 @@ public class Entrada {
 				entrada.nextLine();
 			}
 		}while(!success);
+		entrada.nextLine();
 		return miFloat;
 	}
 
@@ -72,6 +75,7 @@ public class Entrada {
 				entrada.nextLine();
 			}
 		}while(!success);
+		entrada.nextLine();
 		return miDouble;
 	}
 	
@@ -79,7 +83,6 @@ public class Entrada {
 		boolean success = false;
 		String lectura =  "";
 		char miChar = ' ';	
-		entrada.nextLine();
 		do {
 			try {
 				System.out.print(missatge);
@@ -101,7 +104,6 @@ public class Entrada {
 	public static String llegirString(String missatge){
 		boolean success = false;
 		String miString =  "";	
-		entrada.nextLine();
 		do {
 			try {
 				System.out.print(missatge);
@@ -119,7 +121,6 @@ public class Entrada {
 		boolean success = false;
 		String lectura =  "";
 		boolean miBoolean = false;	
-		entrada.nextLine();
 		do {
 			try {
 				System.out.print(missatge);
