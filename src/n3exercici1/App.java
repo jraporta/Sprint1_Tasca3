@@ -1,11 +1,9 @@
 package n3exercici1;
 
-import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.HashSet;
 import java.util.Iterator;
 import java.util.List;
 
@@ -88,13 +86,9 @@ public class App {
 	private static void afegirPersonesDesdeCSV() {
 		Path path = null;
 		path = askForPath("Indica la ruta del fitxer CSV: ");
-		try {
-			for(Iterator<String[]> ite = Csv.toCollection(new HashSet<String[]>(), path).iterator(); ite.hasNext() ; ) {
-				String[] p = ite.next();
-				persones.add(new Persona(p[0], p[1], p[2]));
-			}
-		}catch (IOException e) {
-			System.out.println("Error al intentar llegir el document.");
+		for(Iterator<String[]> ite = (new Csv(path).iterator()); ite.hasNext() ; ) {
+			String[] p = ite.next();
+			persones.add(new Persona(p[0], p[1], p[2]));
 		}
 	}
 	
