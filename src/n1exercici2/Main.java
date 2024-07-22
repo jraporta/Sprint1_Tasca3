@@ -19,8 +19,8 @@ public class Main {
 		
 		
 		
-		for(ListIterator<Integer> it = numbers.listIterator(); it.hasNext(); ) {
-			numbersReverse.add(0, it.next());
+		for(ListIterator<Integer> it = numbers.listIterator(numbers.size()); it.hasPrevious(); ) {
+			numbersReverse.add(it.previous());
 		}
 		
 		System.out.println(numbersReverse);

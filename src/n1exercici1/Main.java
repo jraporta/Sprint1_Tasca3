@@ -23,6 +23,8 @@ public class Main {
 		months.add(new Month("November"));
 		months.add(new Month("December"));
 	
+		System.out.println(months);
+	
 		months.add(7,new Month("August"));
 		System.out.println("for-each:");
 		for (Month month : months) {

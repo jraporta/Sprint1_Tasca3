@@ -33,7 +33,7 @@ public class Main {
 			}
 			llistaPaisos = new ArrayList<>(paisos.keySet());
 		} catch (IOException e) {
-			System.out.println("Error al llegir les dades de " + pathPaisos);
+			System.out.printf("Error al llegir les dades de %s%d%s", pathPaisos, e.getMessage());
 			return;
 		}
 		
@@ -45,9 +45,9 @@ public class Main {
 			
 			pais = llistaPaisos.remove((int) (Math.random() * llistaPaisos.size()));
 			if (paisos.get(pais).equalsIgnoreCase(Entrada.llegirString("Quina és la capital de " + pais + "?"))) {
-				System.out.println (String.format("Encert, puntuació: %d", ++puntuacio));
+				System.out.printf("Encert, puntuació: %d", ++puntuacio);
 			}else {
-				System.out.println(String.format("Error, la resposta era %s", paisos.get(pais)));
+				System.out.printf("Error, la resposta era %s", paisos.get(pais));
 			}
 		}
 				
@@ -59,7 +59,7 @@ public class Main {
 			}
 			Files.write(pathClassificacio, String.format("\n%s: %d", nomUsuari, puntuacio).getBytes(), StandardOpenOption.APPEND);
 		} catch (IOException e) {
-			System.out.println("Error al guardar la puntuació.");
+			System.out.printf("Error al guardar la puntuació.%n%s", e.getMessage());
 		}
 		
 		

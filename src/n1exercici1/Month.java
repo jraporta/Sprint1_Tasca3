@@ -10,13 +10,21 @@ public class Month {
 	
 	@Override
 	public boolean equals(Object o) {
-		Month month = (Month) o;
-		return this.name.equalsIgnoreCase(month.name);
+		boolean equals = true;
+		if (this == o){
+			equals = true;
+		} else if (o == null){
+			equals = false;			
+		}else {
+			Month month = (Month) o;
+			equals = this.name.equalsIgnoreCase(month.name);
+		}
+		return equals;
 	}
 	
 	@Override
 	public int hashCode() {
-		return this.name.hashCode();
+		return this.name.toLowerCase().hashCode();
 	}
 	
 	@Override
