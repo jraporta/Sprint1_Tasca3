@@ -37,6 +37,15 @@ public class Main {
 		
 		Set<Month> monthsSet = new HashSet<>(months);
 		
+		System.out.println("for-each:");
+		for (Month month : monthsSet) {
+			System.out.println(month);
+		}
+		System.out.println("\nIterator:");
+		for(Iterator<Month> it = monthsSet.iterator() ; it.hasNext() ; ) {
+			System.out.println(it.next());
+		}
+		
 		Month mes13 = new Month("January");
 		System.out.println("\nmes13 és un igual a months.get(0): " + mes13.equals(months.get(0)));
 		
